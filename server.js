@@ -4,10 +4,9 @@ const cors = require("cors");
 const path = require("path");
 const app = express();
 const port = 3000;
-
 const keyPath = path.resolve(
   __dirname,
-  "./reartic`le-admin-da70e-firebase-adminsdk-d8jex-4f1e77e4b3 (1).json"
+  "./rearticle-admin-da70e-firebase-adminsdk-d8jex-4f1e77e4b3.json"
 );
 
 const analyticsDataClient = new BetaAnalyticsDataClient({
