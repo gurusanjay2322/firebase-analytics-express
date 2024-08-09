@@ -19,10 +19,9 @@ app.get('/user-activity', async (req, res) => {
       dateRanges: [{ startDate: '2023-01-01', endDate: '2023-12-31' }],
       dimensions: [{ name: 'date' }],
       metrics: [{ name: 'activeUsers' }],
-      returnPropertyQuota: true, // Ensure propertyQuota is included in the response
+      returnPropertyQuota: true,
     });
 
-    // Prepare the response
     const result = {
       dimensionHeaders: response.dimensionHeaders,
       metricHeaders: response.metricHeaders,
@@ -32,11 +31,10 @@ app.get('/user-activity', async (req, res) => {
       })),
       rowCount: response.rowCount,
       metadata: response.metadata,
-      propertyQuota: response.propertyQuota, // Include propertyQuota in the response
+      propertyQuota: response.propertyQuota,
       kind: response.kind,
     };
 
-    // Check if there are no rows
     if (response.rows.length === 0) {
       result.message = 'No data available for the specified query parameters.';
       result.data = [];
